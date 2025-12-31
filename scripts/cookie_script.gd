@@ -85,10 +85,11 @@ func _input(event):
 			var ob = add_text.instantiate()
 			var goldie = false
 			if goldpress:
-				goldie = randi_range(0, 100) < 51
+				goldie = randi_range(0, 100) < 3
 			else:
 				goldie = randi_range(0, 100) == 1
 			if goldie:
+				$"../GoldEffect".play()
 				var gold = load("res://scenes/gold_star_particles.tscn").instantiate()
 				obj.golden = true
 				game_manager.cookies += 500

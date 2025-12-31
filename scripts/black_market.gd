@@ -9,7 +9,8 @@ extends Area2D
 @onready var stock_label = $"../Black Background/stock count"
 @onready var stonkss = $"../Black Background/stonkss"
 @onready var stock_val = $"../Black Background/stock value"
-@onready var pl = $"../Black Background/P_L"
+@onready var pl = $"../Black Background/P_L_Percent"
+@onready var plnum = $"../Black Background/P_L_#"
 var mcx = 0
 var mouse = false
 
@@ -54,17 +55,21 @@ func _process(_delta: float) -> void:
 	stock_label.text = "Stocks bought: " + str(game.no_stocks)
 	stock_val.text = "Stock value: " + str(game.acc_s)
 	if game.no_stocks > 0:
+		var plnumber = (float(game.no_stocks) * float(game.acc_s)) - game.buy_cost
 		var percent = str(int((((float(game.no_stocks) * float(game.acc_s)) / float(game.buy_cost)) * 100) - 100)) + "%"
 		if (game.buy_cost / game.no_stocks) < game.acc:
 			percent = "+" + percent
 			stonkss.default_color = Color(0.433, 1.0, 0.589, 1.0)
+			plnum.text = "Profit: " + str(int(plnumber)) + "¢"
 		else:
 			stonkss.default_color = Color(1.0, 0.53, 0.557, 1.0)
+			plnum.text = "Loss: " + str(int(abs(plnumber))) + "¢"
 		percent = "\nPercent: " + percent
 		pl.text = "Cookies spent: " + str(game.buy_cost) + percent
 	else:
 		stonkss.default_color = Color(1, 1, 1, 1)
 		pl.text = ""
+		plnum.text = ""
 	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and mouse and !game.open:

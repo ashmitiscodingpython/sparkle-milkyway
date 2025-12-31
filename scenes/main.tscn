@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://b4v7t5r7ek2fa"]
+[gd_scene load_steps=76 format=3 uid="uid://b4v7t5r7ek2fa"]
 
 [ext_resource type="Script" uid="uid://bhbw7bmg8gbi3" path="res://scripts/cookie_script.gd" id="1_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://bypm1vj5jdkvv" path="res://images/cookie.png" id="2_trceg"]
@@ -47,9 +47,11 @@
 [ext_resource type="Texture2D" uid="uid://y13gigttuplq" path="res://images/eye_back.png" id="44_vchkt"]
 [ext_resource type="Texture2D" uid="uid://xiungs5tjq0m" path="res://images/eye_fore.png" id="45_txyw0"]
 [ext_resource type="AudioStream" uid="uid://dd0pih81dfylw" path="res://sounds/background.mp3" id="48_ty1g6"]
-[ext_resource type="Script" uid="uid://b61wv30scng25" path="res://scenes/background_music.gd" id="49_j2jfr"]
+[ext_resource type="Script" uid="uid://b61wv30scng25" path="res://scripts/background_music.gd" id="49_j2jfr"]
 [ext_resource type="AudioStream" uid="uid://bc1y4r734ekp6" path="res://sounds/achievement.mp3" id="49_ty1g6"]
 [ext_resource type="AudioStream" uid="uid://dhm6sbikertnh" path="res://sounds/click.mp3" id="50_j2jfr"]
+[ext_resource type="AudioStream" uid="uid://41lrggg63ftn" path="res://sounds/gold.mp3" id="51_bjg73"]
+[ext_resource type="PackedScene" uid="uid://bgyabqqf7kkex" path="res://scenes/gold_3x.tscn" id="52_bu4jf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4dvvg"]
 radius = 4.87
@@ -470,7 +472,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="P_L" type="Label" parent="Black Background"]
+[node name="P_L_Percent" type="Label" parent="Black Background"]
 texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -483,7 +485,24 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(-1.346, 0.8)
 text = "Cookies spent: 0
-Profit: 0"
+Percent: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="P_L_#" type="Label" parent="Black Background"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 168.746
+offset_top = -125.266
+offset_right = 168.746
+offset_bottom = -125.266
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(-1.346, 0.8)
+text = "Profit: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -768,6 +787,12 @@ script = ExtResource("49_j2jfr")
 [node name="ClickEffect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("50_j2jfr")
 volume_db = 3.26
+
+[node name="GoldEffect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("51_bjg73")
+
+[node name="gold3x" parent="." instance=ExtResource("52_bu4jf")]
+position = Vector2(108, 731)
 
 [connection signal="mouse_entered" from="Cookie" to="Cookie" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Cookie" to="Cookie" method="_on_mouse_exited"]

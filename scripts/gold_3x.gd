@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	parent.position.y -= 2
-	if elapse > 30:
+	if elapse > 600:
 		game.golde = false
 		pressed = false
 		afterelapse += _delta
