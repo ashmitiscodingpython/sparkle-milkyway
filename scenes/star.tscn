@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c813n2bl17tn1"]
+
+[ext_resource type="Texture2D" uid="uid://gw0kp1scitlm" path="res://images/michelin_star.png" id="1_j6vao"]
+[ext_resource type="Script" uid="uid://cv32p5eikluck" path="res://scripts/star.gd" id="2_ef0hr"]
+
+[node name="star" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(2.39, 2.39)
+texture = ExtResource("1_j6vao")
+script = ExtResource("2_ef0hr")

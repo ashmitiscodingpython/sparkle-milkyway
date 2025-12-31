@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://d11f3gj7n3t33"]
+
+[ext_resource type="Script" uid="uid://esi3j7ldx68n" path="res://scripts/shop_item.gd" id="1_btjjm"]
+[ext_resource type="Texture2D" uid="uid://sq68xmxpws8p" path="res://images/more_dough.png" id="1_lrx6i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btjjm"]
+size = Vector2(206.139, 76)
+
+[node name="shopitem" type="Area2D"]
+script = ExtResource("1_btjjm")
+
+[node name="Document1" type="Sprite2D" parent="."]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
+texture_filter = 1
+position = Vector2(-1.90735e-06, -1.14441e-05)
+scale = Vector2(0.343, 0.237)
+texture = ExtResource("1_lrx6i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.90735e-06)
+shape = SubResource("RectangleShape2D_btjjm")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

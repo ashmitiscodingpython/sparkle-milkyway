@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://csxw8tlwwp54o"]
+
+[ext_resource type="Texture2D" uid="uid://bwn4opube4n7" path="res://images/trace.png" id="1_jysnp"]
+[ext_resource type="Script" uid="uid://bvgrrtkpxvrcd" path="res://scripts/trace.gd" id="2_gvqha"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kmb1v"]
+particle_flag_disable_z = true
+angular_velocity_min = -587.59
+angular_velocity_max = 504.83
+radial_velocity_min = -137.93
+radial_velocity_max = 241.38
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -100.0
+radial_accel_max = 100.0
+
+[node name="trace" type="GPUParticles2D"]
+z_index = 9
+scale = Vector2(0.475, 0.475)
+amount = 14
+texture = ExtResource("1_jysnp")
+lifetime = 0.8
+process_material = SubResource("ParticleProcessMaterial_kmb1v")
+script = ExtResource("2_gvqha")

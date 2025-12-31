@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfgh6c7bw8f6i"]
+
+[ext_resource type="Texture2D" uid="uid://dfi7ktjelyxvr" path="res://images/achievement_task_force.png" id="1_rnxx6"]
+[ext_resource type="Script" uid="uid://dbybai2kqkj3f" path="res://scripts/achievement.gd" id="2_654ea"]
+
+[node name="AchievementTaskForce" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_rnxx6")
+script = ExtResource("2_654ea")

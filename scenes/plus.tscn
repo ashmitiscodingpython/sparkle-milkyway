@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs7t5qo65l4yu"]
+
+[ext_resource type="Texture2D" uid="uid://cxnwqa08rdwv5" path="res://images/plus.png" id="1_hnxfw"]
+[ext_resource type="Script" uid="uid://r5gyuxwwuw77" path="res://scripts/plus.gd" id="1_pnfie"]
+
+[node name="plus" type="RigidBody2D"]
+z_index = 10
+gravity_scale = -1.0
+script = ExtResource("1_pnfie")
+
+[node name="Plus" type="Sprite2D" parent="."]
+scale = Vector2(0.155, 0.155)
+texture = ExtResource("1_hnxfw")

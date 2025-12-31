@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5d7anpifavsn"]
+
+[ext_resource type="Texture2D" uid="uid://binhndeufs1q8" path="res://images/gold star.png" id="1_il7j6"]
+[ext_resource type="Script" uid="uid://dku0s08bhajcx" path="res://scripts/gold_star_particles.gd" id="2_2re5m"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a8y0u"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = -182.1
+angle_max = 240.0
+spread = 180.0
+flatness = 0.11
+initial_velocity_min = 373.56
+initial_velocity_max = 551.72
+gravity = Vector3(0, 700, 0)
+
+[node name="GoldStarParticles" type="GPUParticles2D"]
+texture_filter = 1
+emitting = false
+amount = 35
+texture = ExtResource("1_il7j6")
+lifetime = 1.74
+one_shot = true
+explosiveness = 1.0
+collision_base_size = 8.31
+process_material = SubResource("ParticleProcessMaterial_a8y0u")
+script = ExtResource("2_2re5m")

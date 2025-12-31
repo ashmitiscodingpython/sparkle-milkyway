@@ -1,0 +1,13 @@
+<<<<<<< HEAD
+# Godot-specific
+export/
+*.import
+*.cfg
+*.tmp
+*.log
+
+=======
+# Godot 4+ specific ignores
+.godot/
+/android/
+>>>>>>> 1596ccb (commit)

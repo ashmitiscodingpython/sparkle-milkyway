@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnvqfcm8ge7eo"]
+
+[ext_resource type="Texture2D" uid="uid://bypm1vj5jdkvv" path="res://images/cookie.png" id="1_b217k"]
+[ext_resource type="Script" uid="uid://bgeaexrusvr52" path="res://scripts/cookie_smal.gd" id="1_fldd3"]
+
+[node name="Cookie_smal" type="RigidBody2D"]
+script = ExtResource("1_fldd3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_b217k")
