@@ -75,20 +75,21 @@ func _process(delta: float) -> void:
 		$Ear2.visible = true
 		$Area2D.visible = true
 		$Area2D2.visible = true
-	var hiss = $"../HissEffect"
+	var hiss: AudioStreamPlayer2D = $"../HissEffect"
 	if boiling > 50 and !heat_disable:
 		heat_disable = true
 	if heat_disable:
 		scale += (Vector2(2, 2) - scale) / 5
 		if boiling < 3:
 			heat_disable = false
-	if boiling > 0:
-		boiling += (0 - boiling) / 50.0
+	if boiling > 1:
 		if !hiss.playing:
-			$"../HissEffect".play()
+			hiss.play()
 		hiss.volume_db = (boiling / 5.0) + randf_range(-1.0, 1.0)
 	else:
-		$"../HissEffect".stop()
+		hiss.stop()
+	if boiling > 0:
+		boiling += (0 - boiling) / 50.0
 	$"../ColorRect".material.set_shader_parameter("thresh", boiling / 22.0)
 
 func _input(event):
