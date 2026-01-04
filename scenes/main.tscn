@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://b4v7t5r7ek2fa"]
+[gd_scene load_steps=84 format=3 uid="uid://b4v7t5r7ek2fa"]
 
 [ext_resource type="Script" uid="uid://bhbw7bmg8gbi3" path="res://scripts/cookie_script.gd" id="1_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://bypm1vj5jdkvv" path="res://images/cookie.png" id="2_trceg"]
@@ -51,7 +51,19 @@
 [ext_resource type="AudioStream" uid="uid://bc1y4r734ekp6" path="res://sounds/achievement.mp3" id="49_ty1g6"]
 [ext_resource type="AudioStream" uid="uid://dhm6sbikertnh" path="res://sounds/click.mp3" id="50_j2jfr"]
 [ext_resource type="AudioStream" uid="uid://41lrggg63ftn" path="res://sounds/gold.mp3" id="51_bjg73"]
-[ext_resource type="PackedScene" uid="uid://bgyabqqf7kkex" path="res://scenes/gold_3x.tscn" id="52_bu4jf"]
+[ext_resource type="AudioStream" uid="uid://cs6e6vql6eoqk" path="res://sounds/purchase.mp3" id="52_bu4jf"]
+[ext_resource type="Shader" uid="uid://ci78x0uhrdvpy" path="res://lava.gdshader" id="53_o7ddy"]
+[ext_resource type="Script" uid="uid://drhpgi30k4ps2" path="res://scripts/camera.gd" id="54_0loja"]
+[ext_resource type="AudioStream" uid="uid://dp4sx16y703tw" path="res://sounds/hiss.mp3" id="54_ids8r"]
+[ext_resource type="Script" uid="uid://bo04e0bbu28fh" path="res://scripts/temp.gd" id="56_dnhof"]
+[ext_resource type="Texture2D" uid="uid://i8b8ohvvqne" path="res://images/square.png" id="57_1v6qk"]
+[ext_resource type="Script" uid="uid://ddiudvm6fuer2" path="res://scripts/limit.gd" id="58_augu2"]
+[ext_resource type="Script" uid="uid://y8d684cajolv" path="res://scenes/alt.gd" id="60_t5ykj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0loja"]
+shader = ExtResource("53_o7ddy")
+shader_parameter/base = Color(1, 0.368, 0.21, 1)
+shader_parameter/thresh = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4dvvg"]
 radius = 4.87
@@ -125,6 +137,14 @@ line_spacing = 2.235
 font_size = 22
 
 [node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_0loja")
+offset_left = -54.0
+offset_top = -32.0
+offset_right = 1216.0
+offset_bottom = 702.0
+color = Color(1, 1, 1, 0)
 
 [node name="Cookie" type="Area2D" parent="."]
 position = Vector2(592, 470)
@@ -791,8 +811,49 @@ volume_db = 3.26
 [node name="GoldEffect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("51_bjg73")
 
-[node name="gold3x" parent="." instance=ExtResource("52_bu4jf")]
-position = Vector2(108, 731)
+[node name="PurchaseEffect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("52_bu4jf")
+
+[node name="HissEffect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("54_ids8r")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+offset = Vector2(576, 324)
+script = ExtResource("54_0loja")
+
+[node name="Temp" type="VSlider" parent="."]
+self_modulate = Color(0.15102, 0.647109, 0, 1)
+texture_filter = 1
+offset_left = 1107.0
+offset_top = 285.0
+offset_right = 1123.0
+offset_bottom = 482.0
+script = ExtResource("56_dnhof")
+
+[node name="Label" type="Label" parent="Temp"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -10.0
+offset_top = -18.0
+offset_right = 27.0
+offset_bottom = -2.0
+text = "TEMP"
+
+[node name="Sprite2D" type="Sprite2D" parent="Temp"]
+modulate = Color(1, 0, 0.25, 1)
+texture_filter = 1
+position = Vector2(7.99997, 63)
+scale = Vector2(0.120833, 0.041)
+texture = ExtResource("57_1v6qk")
+script = ExtResource("58_augu2")
+
+[node name="ALT" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1417, 570)
+scale = Vector2(0.35, 0.35)
+offset = Vector2(750, 750)
+script = ExtResource("60_t5ykj")
 
 [connection signal="mouse_entered" from="Cookie" to="Cookie" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Cookie" to="Cookie" method="_on_mouse_exited"]

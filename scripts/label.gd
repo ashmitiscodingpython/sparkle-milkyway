@@ -5,7 +5,10 @@ extends Label
 @onready var game = $"../GameManager"
 
 func _ready() -> void:
-	lab.text = "+" + str(game.CPC)
+	if !game.lava:
+		lab.text = "+" + str(game.CPC)
+	else:
+		lab.text = "+" + str(game.CPC * 3)
 	if game.open:
 		lab.position = Vector2(randi_range(0, 700), 600)
 	elif game.black:

@@ -8,6 +8,7 @@ var norm_scale
 @onready var sprite = $Document1
 @onready var area = $"."
 @onready var game_manager = %GameManager
+var namea
 var last
 
 func michelin():
@@ -41,17 +42,18 @@ func _ready() -> void:
 	normal_y = area.position.y
 	norm_scale = area.scale.x
 	match varient:
-		1: sprite.texture = load("res://images/more_dough.png")
-		2: sprite.texture = load("res://images/new_oven.png")
-		3: sprite.texture = load("res://images/hire_grandma.png")
-		4: sprite.texture = load("res://images/shop_.png")
-		5: sprite.texture = load("res://images/black_market.png")
-		6: sprite.texture = load("res://images/shop_factory.png")
-		7: sprite.texture = load("res://images/factory_worker.png")
-		8: sprite.texture = load("res://images/hands.png")
-		9: sprite.texture = load("res://images/michelin.png")
-		10: sprite.texture = load("res://images/cookie monster.png")
-		11: sprite.texture = load("res://images/llllava cccokie.png")
+		1: namea = "more_dough"
+		2: namea = "new_oven"
+		3: namea = "hire_grandma"
+		4: namea = "shop_"
+		5: namea = "black_market"
+		6: namea = "shop_factory"
+		7: namea = "factory_worker"
+		8: namea = "hands"
+		9: namea = "michelin"
+		10: namea = "cookie monster"
+		11: namea = "llllava cccokie"
+	sprite.texture = load("res://images/" + namea + ".png")
 
 func _process(_delta: float) -> void:
 	var exc = !(game_manager.black_market and varient == 5) and !(game_manager.factories > 0 and varient == 6) and \
@@ -64,6 +66,8 @@ func _process(_delta: float) -> void:
 	if mouse and !game_manager.close_highlighted and game_manager.cookies >= cost and exc and !game_manager.factory_color_prompt:
 		var scaled = ((norm_scale * 1.15) - area.scale.x) / 5
 		area.scale += Vector2(scaled, scaled)
+		$"../../ALT".touchtime += 1
+		$"../../ALT".texture = load("res://images/" + namea + "_alt.png")
 	else:
 		var scaled = (norm_scale - area.scale.x) / 5
 		area.scale += Vector2(scaled, scaled)
@@ -76,6 +80,7 @@ func _input(event: InputEvent) -> void:
 						!(game_manager.factories == 0 and varient == 7) and !(game_manager.masterchefs > 17 and varient == 9) and \
 						!(game_manager.lava and varient == 11) and !(game_manager.cookiemonster and varient == 10)
 			if exc and !game_manager.factory_color_prompt:
+				$"../../PurchaseEffect".play()
 				area.scale -= Vector2(0.1, 0.1)
 				game_manager.cookies -= cost
 				effects[varient].call()

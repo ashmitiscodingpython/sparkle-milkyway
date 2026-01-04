@@ -18,6 +18,8 @@ var alt = 0
 var alttt = false
 var al = false
 var mouse_click = false
+var boiling = 0
+var heat_disable = false
 
 func _ready() -> void:
 	area.scale = Vector2(1, 1)
@@ -43,7 +45,7 @@ func _process(delta: float) -> void:
 	Input.set_custom_mouse_cursor(tex)
 	time_sec += delta
 	area.rotation = sin(time_sec * 3) * 0.3
-	if mouse_on and !game_manager.factory_color_prompt:
+	if mouse_on and !game_manager.factory_color_prompt and !heat_disable:
 		area.scale += (Vector2(6, 6) - area.scale) / 10
 	else:
 		area.scale += (Vector2(5, 5) - area.scale) / 10
@@ -73,10 +75,25 @@ func _process(delta: float) -> void:
 		$Ear2.visible = true
 		$Area2D.visible = true
 		$Area2D2.visible = true
+	var hiss = $"../HissEffect"
+	if boiling > 50 and !heat_disable:
+		heat_disable = true
+	if heat_disable:
+		scale += (Vector2(2, 2) - scale) / 5
+		if boiling < 3:
+			heat_disable = false
+	if boiling > 0:
+		boiling += (0 - boiling) / 50.0
+		if !hiss.playing:
+			$"../HissEffect".play()
+		hiss.volume_db = (boiling / 5.0) + randf_range(-1.0, 1.0)
+	else:
+		$"../HissEffect".stop()
+	$"../ColorRect".material.set_shader_parameter("thresh", boiling / 22.0)
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index in [MOUSE_BUTTON_LEFT]:
-		if mouse_on and !game_manager.factory_color_prompt:
+		if mouse_on and !game_manager.factory_color_prompt and !heat_disable:
 			$"../ClickEffect".play()
 			area.scale += Vector2(1, 1)
 			var sma_cook = load("res://scenes/cookie_smal.tscn")
@@ -102,6 +119,9 @@ func _input(event):
 			ob.game = %GameManager
 			get_tree().current_scene.add_child(obj)
 			get_tree().current_scene.add_child(ob)
+			if game_manager.lava:
+				boiling += 10
+			%Camera2D.shake = boiling / 10.0
 	if event is InputEventMouseButton:
 		if event.pressed:
 			mouse_click = true

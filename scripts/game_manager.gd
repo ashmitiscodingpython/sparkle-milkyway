@@ -79,7 +79,7 @@ func _process(_delta: float) -> void:
 	if !lava:
 		minus = startime
 	lavatime = startime - minus
-	if lavatime > 5:
+	if lavatime > 10:
 		lava = false
 	cookie_value += randf_range(-0.002, 0.0021)
 	cc.position.x = 50 + ccx
@@ -111,7 +111,7 @@ func _increase_cookies(increase) -> void:
 		if !lava:
 			cookies += CPC
 		else:
-			cookies += 3 * CPC
+			cookies += 50 * CPC
 	else:
 		cookies += CPS
 
