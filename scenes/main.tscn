@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://b4v7t5r7ek2fa"]
+[gd_scene load_steps=87 format=3 uid="uid://b4v7t5r7ek2fa"]
 
 [ext_resource type="Script" uid="uid://bhbw7bmg8gbi3" path="res://scripts/cookie_script.gd" id="1_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://bypm1vj5jdkvv" path="res://images/cookie.png" id="2_trceg"]
@@ -58,6 +58,8 @@
 [ext_resource type="Script" uid="uid://bo04e0bbu28fh" path="res://scripts/temp.gd" id="56_dnhof"]
 [ext_resource type="Texture2D" uid="uid://i8b8ohvvqne" path="res://images/square.png" id="57_1v6qk"]
 [ext_resource type="Script" uid="uid://ddiudvm6fuer2" path="res://scripts/limit.gd" id="58_augu2"]
+[ext_resource type="Script" uid="uid://cq5oodfyukcvl" path="res://scenes/settings.gd" id="60_e755i"]
+[ext_resource type="Texture2D" uid="uid://b7vwkyoadp6i5" path="res://images/settings.png" id="60_kf5aa"]
 [ext_resource type="Script" uid="uid://y8d684cajolv" path="res://scenes/alt.gd" id="60_t5ykj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0loja"]
@@ -135,6 +137,9 @@ radius = 36.8701
 [sub_resource type="LabelSettings" id="LabelSettings_kmb1v"]
 line_spacing = 2.235
 font_size = 22
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ro3en"]
+radius = 33.1361
 
 [node name="Node2D" type="Node2D"]
 
@@ -823,7 +828,7 @@ offset = Vector2(576, 324)
 script = ExtResource("54_0loja")
 
 [node name="Temp" type="VSlider" parent="."]
-self_modulate = Color(0.15102, 0.647109, 0, 1)
+self_modulate = Color(0, 0.721892, 0.84539, 1)
 texture_filter = 1
 offset_left = 1107.0
 offset_top = 285.0
@@ -854,6 +859,19 @@ position = Vector2(1417, 570)
 scale = Vector2(0.35, 0.35)
 offset = Vector2(750, 750)
 script = ExtResource("60_t5ykj")
+
+[node name="Settings" type="Area2D" parent="."]
+position = Vector2(75, 65)
+script = ExtResource("60_e755i")
+
+[node name="Settings" type="Sprite2D" parent="Settings"]
+texture_filter = 1
+position = Vector2(0.25, -3.25)
+scale = Vector2(0.59, 0.59)
+texture = ExtResource("60_kf5aa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Settings"]
+shape = SubResource("CircleShape2D_ro3en")
 
 [connection signal="mouse_entered" from="Cookie" to="Cookie" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Cookie" to="Cookie" method="_on_mouse_exited"]
@@ -895,3 +913,5 @@ script = ExtResource("60_t5ykj")
 [connection signal="mouse_exited" from="ColorPrompt/RgbSlidee3/Area2D" to="ColorPrompt/RgbSlidee3/Area2D/RgbSlider" method="_on_area_2d_mouse_exited"]
 [connection signal="mouse_entered" from="ColorPrompt/tick" to="ColorPrompt/tick" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ColorPrompt/tick" to="ColorPrompt/tick" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Settings" to="Settings" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Settings" to="Settings" method="_on_mouse_exited"]

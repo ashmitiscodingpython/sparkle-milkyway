@@ -5,7 +5,7 @@ extends VSlider
 var designated_x = 1107
 var designated_size = 197
 var valuex = 0
-var cold_color = Color(0.576, 1, 0.458, 1)
+var cold_color = Color(0, 0.72, 0.84, 1)
 var hot_color = Color(1, 0, 0.23, 1)
 var lavaed = false
 
@@ -23,7 +23,7 @@ func _process(_delta: float) -> void:
 	else:
 		designated_x = 1107
 		designated_size = 197
-	self_modulate = lerp(cold_color, hot_color, valuex / 100.0)
+	self_modulate = lerp(cold_color, hot_color, valuex / 80.0)
 	value = valuex
 	position.x += (designated_x - position.x) / 5
 	size.y += (designated_size - size.y) / 5
