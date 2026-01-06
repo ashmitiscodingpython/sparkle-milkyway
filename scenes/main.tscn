@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://b4v7t5r7ek2fa"]
+[gd_scene load_steps=88 format=3 uid="uid://b4v7t5r7ek2fa"]
 
 [ext_resource type="Script" uid="uid://bhbw7bmg8gbi3" path="res://scripts/cookie_script.gd" id="1_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://bypm1vj5jdkvv" path="res://images/cookie.png" id="2_trceg"]
@@ -140,6 +140,9 @@ font_size = 22
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ro3en"]
 radius = 33.1361
+
+[sub_resource type="LabelSettings" id="LabelSettings_t5ykj"]
+line_spacing = -4.665
 
 [node name="Node2D" type="Node2D"]
 
@@ -872,6 +875,44 @@ texture = ExtResource("60_kf5aa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Settings"]
 shape = SubResource("CircleShape2D_ro3en")
+
+[node name="FactoryPrompt2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(576, 368.17)
+scale = Vector2(1.65, 1.5)
+texture = ExtResource("23_pm3ni")
+
+[node name="Label" type="Label" parent="FactoryPrompt2"]
+offset_left = -45.4545
+offset_top = -67.4467
+offset_right = 12.5455
+offset_bottom = -51.4467
+scale = Vector2(1.375, 1.375)
+text = "Settings"
+
+[node name="HSlider" type="HSlider" parent="FactoryPrompt2"]
+offset_left = -123.03
+offset_top = -32.1133
+offset_right = 56.9697
+offset_bottom = -16.1133
+scale = Vector2(1, 1.15)
+
+[node name="HSlider2" type="HSlider" parent="FactoryPrompt2"]
+offset_left = -123.03
+offset_top = -7.44668
+offset_right = 56.9697
+offset_bottom = 8.55332
+scale = Vector2(1, 1.15)
+
+[node name="Label2" type="Label" parent="FactoryPrompt2"]
+offset_left = 78.7879
+offset_top = -30.78
+offset_right = 124.788
+offset_bottom = -14.78
+text = "Music
+
+Effects"
+label_settings = SubResource("LabelSettings_t5ykj")
 
 [connection signal="mouse_entered" from="Cookie" to="Cookie" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Cookie" to="Cookie" method="_on_mouse_exited"]

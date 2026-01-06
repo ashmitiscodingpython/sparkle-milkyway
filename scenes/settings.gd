@@ -1,6 +1,7 @@
 extends Area2D
 
 var mouse = false
+@onready var sprite = $"./Settings"
 
 func _process(_delta: float) -> void:
 	scale += (Vector2(1, 1) - scale) / 5
