@@ -22,14 +22,14 @@ func _process(_delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
-		if mouse:
+		if mouse and factory:
 			game_manager.facset = false
-		elif mouse:
+		elif mouse and shop:
 			game_manager.open = false
-		elif mouse:
+		elif mouse and black:
 			game_manager.black = false
-		elif mouse:
-			game_manager.factory_color_prompt = false
+		elif mouse and settings:
+			game_manager.settings = false
 		
 func _on_mouse_entered() -> void:
 	mouse = true

@@ -45,6 +45,10 @@ var threexgold = false
 var golde = false
 var leftear = false
 var rightear = 0
+var settings = false
+var effect_vol = 1
+var effects: Array[AudioStreamPlayer2D]
+var norms = []
 
 func achievement() -> void:
 	$"../AchievementSound".play()
@@ -52,11 +56,21 @@ func achievement() -> void:
 func lav() -> void:
 	minus = startime
 
+func _ready() -> void:
+	effects = [$"../AchievementSound", $"../ClickEffect", $"../GoldEffect", $"../PurchaseEffect", $"../HissEffect"]
+	for effect in effects:
+		print(effect)
+		norms.append(effect.volume_db)
+
 func add_factory() -> void:
 	factories += 1
 	factory.visible = true
 
 func _process(_delta: float) -> void:
+	var i = 0
+	for effect in effects:
+		effect.volume_db = norms[i] * effect_vol
+		i += 1
 	if stars == 18 and !eighteen:
 		eighteen = true
 		var achieve = load("res://scenes/achievement.tscn").instantiate()

@@ -1,6 +1,7 @@
 extends Area2D
 
 var mouse = false
+@onready var game = %GameManager
 @onready var sprite = $"./Settings"
 
 func _process(_delta: float) -> void:
@@ -12,7 +13,7 @@ func _process(_delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and mouse:
-		print("open")
+		game.settings = true
 		scale -= Vector2(0.5, 0.5)
 
 func _on_mouse_entered() -> void:

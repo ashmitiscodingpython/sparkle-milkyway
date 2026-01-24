@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://b4v7t5r7ek2fa"]
+[gd_scene load_steps=89 format=3 uid="uid://b4v7t5r7ek2fa"]
 
 [ext_resource type="Script" uid="uid://bhbw7bmg8gbi3" path="res://scripts/cookie_script.gd" id="1_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://bypm1vj5jdkvv" path="res://images/cookie.png" id="2_trceg"]
@@ -61,6 +61,7 @@
 [ext_resource type="Script" uid="uid://cq5oodfyukcvl" path="res://scenes/settings.gd" id="60_e755i"]
 [ext_resource type="Texture2D" uid="uid://b7vwkyoadp6i5" path="res://images/settings.png" id="60_kf5aa"]
 [ext_resource type="Script" uid="uid://y8d684cajolv" path="res://scenes/alt.gd" id="60_t5ykj"]
+[ext_resource type="Script" uid="uid://owoi2dvojj8a" path="res://scenes/settings_prompt.gd" id="62_e755i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0loja"]
 shader = ExtResource("53_o7ddy")
@@ -882,6 +883,7 @@ texture_filter = 1
 position = Vector2(576, 368.17)
 scale = Vector2(1.65, 1.5)
 texture = ExtResource("23_pm3ni")
+script = ExtResource("62_e755i")
 
 [node name="Label" type="Label" parent="SettingsPrompt"]
 offset_left = -45.4545
@@ -891,19 +893,23 @@ offset_bottom = -51.4467
 scale = Vector2(1.375, 1.375)
 text = "Settings"
 
-[node name="HSlider" type="HSlider" parent="SettingsPrompt"]
+[node name="Music" type="HSlider" parent="SettingsPrompt"]
 offset_left = -123.03
 offset_top = -32.1133
 offset_right = 56.9697
 offset_bottom = -16.1133
 scale = Vector2(1, 1.15)
+max_value = 1.0
+value = 1.0
 
-[node name="HSlider2" type="HSlider" parent="SettingsPrompt"]
+[node name="Effects" type="HSlider" parent="SettingsPrompt"]
 offset_left = -123.03
 offset_top = -7.44668
 offset_right = 56.9697
 offset_bottom = 8.55332
 scale = Vector2(1, 1.15)
+max_value = 1.0
+value = 1.0
 
 [node name="Label2" type="Label" parent="SettingsPrompt"]
 offset_left = 78.7879
