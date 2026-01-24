@@ -59,7 +59,6 @@ func lav() -> void:
 func _ready() -> void:
 	effects = [$"../AchievementSound", $"../ClickEffect", $"../GoldEffect", $"../PurchaseEffect", $"../HissEffect"]
 	for effect in effects:
-		print(effect)
 		norms.append(effect.volume_db)
 
 func add_factory() -> void:

@@ -900,6 +900,7 @@ offset_right = 56.9697
 offset_bottom = -16.1133
 scale = Vector2(1, 1.15)
 max_value = 1.0
+step = 0.01
 value = 1.0
 
 [node name="Effects" type="HSlider" parent="SettingsPrompt"]
@@ -909,6 +910,7 @@ offset_right = 56.9697
 offset_bottom = 8.55332
 scale = Vector2(1, 1.15)
 max_value = 1.0
+step = 0.01
 value = 1.0
 
 [node name="Label2" type="Label" parent="SettingsPrompt"]
