@@ -284,6 +284,7 @@ z_index = 3
 position = Vector2(-115.248, -119.318)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("10_yc10j")
+shop = true
 
 [node name="Close" type="Sprite2D" parent="Shop Background/close_"]
 z_index = 2
@@ -876,13 +877,13 @@ texture = ExtResource("60_kf5aa")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Settings"]
 shape = SubResource("CircleShape2D_ro3en")
 
-[node name="FactoryPrompt2" type="Sprite2D" parent="."]
+[node name="SettingsPrompt" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(576, 368.17)
 scale = Vector2(1.65, 1.5)
 texture = ExtResource("23_pm3ni")
 
-[node name="Label" type="Label" parent="FactoryPrompt2"]
+[node name="Label" type="Label" parent="SettingsPrompt"]
 offset_left = -45.4545
 offset_top = -67.4467
 offset_right = 12.5455
@@ -890,21 +891,21 @@ offset_bottom = -51.4467
 scale = Vector2(1.375, 1.375)
 text = "Settings"
 
-[node name="HSlider" type="HSlider" parent="FactoryPrompt2"]
+[node name="HSlider" type="HSlider" parent="SettingsPrompt"]
 offset_left = -123.03
 offset_top = -32.1133
 offset_right = 56.9697
 offset_bottom = -16.1133
 scale = Vector2(1, 1.15)
 
-[node name="HSlider2" type="HSlider" parent="FactoryPrompt2"]
+[node name="HSlider2" type="HSlider" parent="SettingsPrompt"]
 offset_left = -123.03
 offset_top = -7.44668
 offset_right = 56.9697
 offset_bottom = 8.55332
 scale = Vector2(1, 1.15)
 
-[node name="Label2" type="Label" parent="FactoryPrompt2"]
+[node name="Label2" type="Label" parent="SettingsPrompt"]
 offset_left = 78.7879
 offset_top = -30.78
 offset_right = 124.788
@@ -913,6 +914,23 @@ text = "Music
 
 Effects"
 label_settings = SubResource("LabelSettings_t5ykj")
+
+[node name="close_" type="Area2D" parent="SettingsPrompt"]
+z_index = 3
+position = Vector2(-115.152, -56.78)
+scale = Vector2(0.64, 0.98)
+script = ExtResource("10_yc10j")
+settings = true
+
+[node name="Close" type="Sprite2D" parent="SettingsPrompt/close_"]
+z_index = 2
+texture_filter = 1
+position = Vector2(3.05176e-05, -1.52588e-05)
+scale = Vector2(0.118812, 0.0852272)
+texture = ExtResource("11_jscy8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsPrompt/close_"]
+shape = SubResource("RectangleShape2D_f6ptj")
 
 [connection signal="mouse_entered" from="Cookie" to="Cookie" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Cookie" to="Cookie" method="_on_mouse_exited"]
@@ -956,3 +974,5 @@ label_settings = SubResource("LabelSettings_t5ykj")
 [connection signal="mouse_exited" from="ColorPrompt/tick" to="ColorPrompt/tick" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Settings" to="Settings" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Settings" to="Settings" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="SettingsPrompt/close_" to="SettingsPrompt/close_" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="SettingsPrompt/close_" to="SettingsPrompt/close_" method="_on_mouse_exited"]
