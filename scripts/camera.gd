@@ -14,3 +14,4 @@ func _process(_delta: float) -> void:
 	position = origin + dxy
 	if shake > 0:
 		shake -= 0.1
+	shake = clamp(shake, 0, 500000)

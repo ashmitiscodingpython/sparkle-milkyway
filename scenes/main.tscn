@@ -58,10 +58,10 @@
 [ext_resource type="Script" uid="uid://bo04e0bbu28fh" path="res://scripts/temp.gd" id="56_dnhof"]
 [ext_resource type="Texture2D" uid="uid://i8b8ohvvqne" path="res://images/square.png" id="57_1v6qk"]
 [ext_resource type="Script" uid="uid://ddiudvm6fuer2" path="res://scripts/limit.gd" id="58_augu2"]
-[ext_resource type="Script" uid="uid://cq5oodfyukcvl" path="res://scenes/settings.gd" id="60_e755i"]
+[ext_resource type="Script" uid="uid://cq5oodfyukcvl" path="res://scripts/settings.gd" id="60_e755i"]
 [ext_resource type="Texture2D" uid="uid://b7vwkyoadp6i5" path="res://images/settings.png" id="60_kf5aa"]
-[ext_resource type="Script" uid="uid://y8d684cajolv" path="res://scenes/alt.gd" id="60_t5ykj"]
-[ext_resource type="Script" uid="uid://owoi2dvojj8a" path="res://scenes/settings_prompt.gd" id="62_e755i"]
+[ext_resource type="Script" uid="uid://y8d684cajolv" path="res://scripts/alt.gd" id="60_t5ykj"]
+[ext_resource type="Script" uid="uid://owoi2dvojj8a" path="res://scripts/settings_prompt.gd" id="62_e755i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0loja"]
 shader = ExtResource("53_o7ddy")
@@ -816,7 +816,7 @@ script = ExtResource("49_j2jfr")
 
 [node name="ClickEffect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("50_j2jfr")
-volume_db = 3.26
+volume_db = -33.302
 
 [node name="GoldEffect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("51_bjg73")
@@ -880,7 +880,7 @@ shape = SubResource("CircleShape2D_ro3en")
 
 [node name="SettingsPrompt" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(576, 368.17)
+position = Vector2(670, 1521)
 scale = Vector2(1.65, 1.5)
 texture = ExtResource("23_pm3ni")
 script = ExtResource("62_e755i")

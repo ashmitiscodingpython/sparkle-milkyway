@@ -25,7 +25,7 @@ func _process(_delta: float) -> void:
 			parent.scale += (Vector2(1, 1) - parent.scale) / 5
 	else:
 		elapse += _delta
-		parent.position += (Vector2(66, 64) - parent.position) / 5
+		parent.position += (Vector2(150, 72) - parent.position) / 5
 		parent.scale += (Vector2(0.6, 0.6) - parent.scale) / 5
 
 func _input(event: InputEvent) -> void:

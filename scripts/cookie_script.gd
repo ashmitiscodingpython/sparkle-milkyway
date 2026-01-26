@@ -83,9 +83,12 @@ func _process(delta: float) -> void:
 		if boiling < 3:
 			heat_disable = false
 	if boiling > 1:
-		if !hiss.playing:
+		var cond = game_manager.effect_vol == 0
+		if !hiss.playing and !cond:
 			hiss.play()
-		hiss.volume_db = (boiling / 5.0) + randf_range(-1.0, 1.0)
+		if cond and hiss.playing:
+			hiss.stop()
+			hiss.volume_db = ((boiling / 5.0) + randf_range(-12.0, 1.0)) * game_manager.effect_vol
 	else:
 		hiss.stop()
 	if boiling > 0:

@@ -13,7 +13,7 @@ func _process(_delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and mouse:
-		game.settings = true
+		game.settings = !game.settings
 		scale -= Vector2(0.5, 0.5)
 
 func _on_mouse_entered() -> void:
