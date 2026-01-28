@@ -83,16 +83,19 @@ func _process(delta: float) -> void:
 		if boiling < 3:
 			heat_disable = false
 	if boiling > 1:
-		var cond = game_manager.effect_vol == 0
+		var cond = game_manager.effect_vol == -0.3
 		if !hiss.playing and !cond:
 			hiss.play()
 		if cond and hiss.playing:
 			hiss.stop()
-			hiss.volume_db = ((boiling / 5.0) + randf_range(-12.0, 1.0)) * game_manager.effect_vol
+		hiss.volume_db = ((boiling / 5.0) + randf_range(-12.0, 1.0)) * game_manager.effect_vol
 	else:
 		hiss.stop()
 	if boiling > 0:
 		boiling += (0 - boiling) / 50.0
+	$"../AchievementSound".volume_db = 1.025 * remap(game_manager.effect_vol, -0.3, 1, -23, 1)
+	$"../PurchaseEffect".volume_db = remap(game_manager.effect_vol, -0.3, 1, -23, 0)
+	$"../GoldEffect".volume_db = 0 - (63 * remap(game_manager.effect_vol, -0.3, 1, 1, 0))
 	$"../ColorRect".material.set_shader_parameter("thresh", boiling / 22.0)
 
 func _input(event):

@@ -40,6 +40,10 @@ func _process(_delta: float) -> void:
 	game_manager.mcx_b = mcx
 	game_manager.csx = ccx
 	cook.cx_a = cook_x
+	if game_manager.availables > 0:
+		$ShopSprite.texture = load("res://images/shop_notify.png")
+	else:
+		$ShopSprite.texture = load("res://images/shop.png")
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:

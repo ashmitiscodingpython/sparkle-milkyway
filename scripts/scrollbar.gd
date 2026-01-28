@@ -2,16 +2,11 @@ extends Area2D
 
 @onready var area = $"."
 @onready var game = %GameManager
+@export var limit = -600.0
 var mouse = false
 var click = false
 
-func _ready() -> void:
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	var limit = -505.0
-	if game.unlocked: limit = -800.0
 	if mouse or click:
 		area.scale += (Vector2(1.1, 1.1) - area.scale) / 5
 		if click:

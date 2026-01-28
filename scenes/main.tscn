@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://b4v7t5r7ek2fa"]
+[gd_scene format=3 uid="uid://b4v7t5r7ek2fa"]
 
 [ext_resource type="Script" uid="uid://bhbw7bmg8gbi3" path="res://scripts/cookie_script.gd" id="1_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://bypm1vj5jdkvv" path="res://images/cookie.png" id="2_trceg"]
@@ -145,9 +145,9 @@ radius = 33.1361
 [sub_resource type="LabelSettings" id="LabelSettings_t5ykj"]
 line_spacing = -4.665
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=784044576]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=987767582]
 material = SubResource("ShaderMaterial_0loja")
 offset_left = -54.0
 offset_top = -32.0
@@ -155,20 +155,20 @@ offset_right = 1216.0
 offset_bottom = 702.0
 color = Color(1, 1, 1, 0)
 
-[node name="Cookie" type="Area2D" parent="."]
+[node name="Cookie" type="Area2D" parent="." unique_id=773649682]
 position = Vector2(592, 470)
 script = ExtResource("1_eb6dy")
 
-[node name="Collider" type="CollisionShape2D" parent="Cookie"]
+[node name="Collider" type="CollisionShape2D" parent="Cookie" unique_id=323132005]
 position = Vector2(0, -1)
 scale = Vector2(3, 3)
 shape = SubResource("CircleShape2D_4dvvg")
 
-[node name="cooki" type="Sprite2D" parent="Cookie"]
+[node name="cooki" type="Sprite2D" parent="Cookie" unique_id=1727875059]
 texture_filter = 1
 texture = ExtResource("2_trceg")
 
-[node name="Ear" type="Sprite2D" parent="Cookie"]
+[node name="Ear" type="Sprite2D" parent="Cookie" unique_id=2134348751]
 visible = false
 z_index = -1
 texture_filter = 1
@@ -178,7 +178,7 @@ texture = ExtResource("3_vc5cj")
 script = ExtResource("4_nvyfr")
 ear_id = -1
 
-[node name="Ear2" type="Sprite2D" parent="Cookie"]
+[node name="Ear2" type="Sprite2D" parent="Cookie" unique_id=1407473613]
 visible = false
 z_index = -1
 texture_filter = 1
@@ -189,38 +189,38 @@ texture = ExtResource("5_nvyfr")
 script = ExtResource("4_nvyfr")
 ear_id = 1
 
-[node name="Area2D" type="Area2D" parent="Cookie"]
+[node name="Area2D" type="Area2D" parent="Cookie" unique_id=1087606942]
 visible = false
 position = Vector2(-6, -6)
 
-[node name="EyeBack" type="Sprite2D" parent="Cookie/Area2D"]
+[node name="EyeBack" type="Sprite2D" parent="Cookie/Area2D" unique_id=320983776]
 scale = Vector2(0.025, 0.025)
 texture = ExtResource("44_vchkt")
 
-[node name="EyeFore" type="Sprite2D" parent="Cookie/Area2D/EyeBack"]
+[node name="EyeFore" type="Sprite2D" parent="Cookie/Area2D/EyeBack" unique_id=53622203]
 texture = ExtResource("45_txyw0")
 script = ExtResource("6_txyw0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cookie/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cookie/Area2D" unique_id=1788210093]
 shape = SubResource("CircleShape2D_txyw0")
 
-[node name="Area2D2" type="Area2D" parent="Cookie"]
+[node name="Area2D2" type="Area2D" parent="Cookie" unique_id=1677480946]
 visible = false
 position = Vector2(6, -6)
 
-[node name="EyeBack2" type="Sprite2D" parent="Cookie/Area2D2"]
+[node name="EyeBack2" type="Sprite2D" parent="Cookie/Area2D2" unique_id=119067054]
 scale = Vector2(0.025, 0.025)
 texture = ExtResource("44_vchkt")
 
-[node name="EyeFore" type="Sprite2D" parent="Cookie/Area2D2/EyeBack2"]
+[node name="EyeFore" type="Sprite2D" parent="Cookie/Area2D2/EyeBack2" unique_id=1565096101]
 texture = ExtResource("45_txyw0")
 script = ExtResource("6_txyw0")
 vari = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cookie/Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cookie/Area2D2" unique_id=548751929]
 shape = SubResource("CircleShape2D_vc5cj")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=1682157871]
 z_index = -12
 texture_filter = 1
 custom_minimum_size = Vector2(5, 0)
@@ -231,11 +231,11 @@ texture = ExtResource("3_a8y0u")
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="GameManager" type="Node2D" parent="."]
+[node name="GameManager" type="Node2D" parent="." unique_id=1908970732]
 unique_name_in_owner = true
 script = ExtResource("4_jkv2x")
 
-[node name="CPS Counter" type="Label" parent="."]
+[node name="CPS Counter" type="Label" parent="." unique_id=731323940]
 texture_filter = 1
 offset_left = 473.0
 offset_top = 171.0
@@ -246,7 +246,7 @@ label_settings = SubResource("LabelSettings_04qyp")
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="CPC Counter" type="Label" parent="."]
+[node name="CPC Counter" type="Label" parent="." unique_id=1081063028]
 texture_filter = 1
 offset_left = 50.0
 offset_top = 171.0
@@ -256,202 +256,209 @@ text = "CPC: 0"
 label_settings = SubResource("LabelSettings_j7wrs")
 metadata/_edit_use_anchors_ = true
 
-[node name="Counter Background" type="Sprite2D" parent="."]
+[node name="Counter Background" type="Sprite2D" parent="." unique_id=942755077]
 z_index = -2
 position = Vector2(608, 123)
 scale = Vector2(4.79333, 0.87)
 texture = ExtResource("6_muem4")
 
-[node name="Shop" type="Area2D" parent="."]
+[node name="Shop" type="Area2D" parent="." unique_id=1111854326]
 position = Vector2(1320, 555)
 script = ExtResource("7_dp3eg")
 
-[node name="ShopSprite" type="Sprite2D" parent="Shop"]
+[node name="ShopSprite" type="Sprite2D" parent="Shop" unique_id=250868336]
 texture_filter = 1
 texture = ExtResource("8_0ld40")
 
-[node name="ShopCollider" type="CollisionShape2D" parent="Shop"]
+[node name="ShopCollider" type="CollisionShape2D" parent="Shop" unique_id=1308665944]
 position = Vector2(9, 1)
 shape = SubResource("RectangleShape2D_fws66")
 
-[node name="Shop Background" type="Sprite2D" parent="."]
+[node name="Shop Background" type="Sprite2D" parent="." unique_id=990520686]
 z_index = -2
 position = Vector2(1522, 320)
 scale = Vector2(1.68333, 2.34667)
 texture = ExtResource("9_gqmmt")
 
-[node name="close_" type="Area2D" parent="Shop Background"]
+[node name="close_" type="Area2D" parent="Shop Background" unique_id=2002112832]
 z_index = 3
 position = Vector2(-115.248, -119.318)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("10_yc10j")
 shop = true
 
-[node name="Close" type="Sprite2D" parent="Shop Background/close_"]
+[node name="Close" type="Sprite2D" parent="Shop Background/close_" unique_id=1445374500]
 z_index = 2
 texture_filter = 1
 position = Vector2(3.05176e-05, -1.52588e-05)
 scale = Vector2(0.118812, 0.0852272)
 texture = ExtResource("11_jscy8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shop Background/close_"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shop Background/close_" unique_id=128969654]
 shape = SubResource("RectangleShape2D_f6ptj")
 
-[node name="shopitem" parent="Shop Background" instance=ExtResource("12_pm3ni")]
+[node name="shopitem" parent="Shop Background" unique_id=1415595090 instance=ExtResource("12_pm3ni")]
 z_index = 2
 position = Vector2(-27.3268, -68.6079)
-scale = Vector2(0.88, 0.88)
+scale = Vector2(0.9, 0.9)
 cost = 10
 
-[node name="shopitem2" parent="Shop Background" instance=ExtResource("12_pm3ni")]
+[node name="shopitem2" parent="Shop Background" unique_id=1536425934 instance=ExtResource("12_pm3ni")]
 z_index = 2
 position = Vector2(-27.3268, 3.40909)
 scale = Vector2(0.9, 0.9)
 varient = 2
 cost = 150
 
-[node name="shopitem3" parent="Shop Background" instance=ExtResource("12_pm3ni")]
+[node name="shopitem3" parent="Shop Background" unique_id=1971413291 instance=ExtResource("12_pm3ni")]
 z_index = 2
 position = Vector2(-27.3268, 78.8351)
 scale = Vector2(0.9, 0.9)
 varient = 3
 cost = 300
 
-[node name="shopitem4" parent="Shop Background" instance=ExtResource("12_pm3ni")]
+[node name="shopitem4" parent="Shop Background" unique_id=1935951966 instance=ExtResource("12_pm3ni")]
 z_index = 2
 position = Vector2(-27.3268, 154.687)
 scale = Vector2(0.9, 0.9)
 varient = 4
 cost = 500
 
-[node name="shopitem5" parent="Shop Background" instance=ExtResource("12_pm3ni")]
+[node name="shopitem5" parent="Shop Background" unique_id=848763384 instance=ExtResource("12_pm3ni")]
 z_index = 2
 position = Vector2(-27.3268, 230.113)
 scale = Vector2(0.9, 0.9)
 varient = 5
 cost = 1000
 
-[node name="shopitem6" parent="Shop Background" instance=ExtResource("12_pm3ni")]
+[node name="shopitem6" parent="Shop Background" unique_id=1922464415 instance=ExtResource("12_pm3ni")]
 z_index = 2
 position = Vector2(-27.3268, 304.261)
 scale = Vector2(0.9, 0.9)
 varient = 6
+cost = 1500
 
-[node name="shopitem7" parent="Shop Background" instance=ExtResource("12_pm3ni")]
+[node name="shopitem7" parent="Shop Background" unique_id=123285687 instance=ExtResource("12_pm3ni")]
 z_index = 2
 position = Vector2(-27.3268, 379.687)
 scale = Vector2(0.9, 0.9)
 varient = 7
+cost = 300
 
-[node name="shopitem8" parent="Shop Background" instance=ExtResource("12_pm3ni")]
+[node name="shopitem8" parent="Shop Background" unique_id=495014086 instance=ExtResource("12_pm3ni")]
 z_index = 2
 position = Vector2(-27.3268, 455.113)
 scale = Vector2(0.9, 0.9)
 varient = 8
+cost = 3000
 
-[node name="shopitem9" parent="Shop Background" instance=ExtResource("12_pm3ni")]
+[node name="shopitem9" parent="Shop Background" unique_id=1360413958 instance=ExtResource("12_pm3ni")]
 z_index = 2
 position = Vector2(-27.3268, 530.113)
 scale = Vector2(0.9, 0.9)
 varient = 9
+cost = 15000
 
-[node name="shopitem10" parent="Shop Background" instance=ExtResource("12_pm3ni")]
+[node name="shopitem10" parent="Shop Background" unique_id=1513827648 instance=ExtResource("12_pm3ni")]
 z_index = 2
 position = Vector2(-27.3268, 604.687)
 scale = Vector2(0.9, 0.9)
 varient = 10
+cost = 10000000
 
-[node name="shopitem11" parent="Shop Background" instance=ExtResource("12_pm3ni")]
+[node name="shopitem11" parent="Shop Background" unique_id=1135870698 instance=ExtResource("12_pm3ni")]
 z_index = 2
 position = Vector2(-27.3268, 678.834)
 scale = Vector2(0.9, 0.9)
 varient = 11
+cost = 50000000
 
-[node name="Scroll Hide" type="Sprite2D" parent="Shop Background"]
+[node name="Scroll Hide" type="Sprite2D" parent="Shop Background" unique_id=30216003]
 z_index = 1
 position = Vector2(10.099, -144.886)
 scale = Vector2(1, 0.181819)
 texture = ExtResource("6_muem4")
 
-[node name="Area2D" type="Area2D" parent="Shop Background"]
+[node name="Area2D" type="Area2D" parent="Shop Background" unique_id=585524136]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shop Background/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shop Background/Area2D" unique_id=528619320]
 position = Vector2(5.64368, 0.639206)
 shape = SubResource("RectangleShape2D_trceg")
 
-[node name="scroll" type="Area2D" parent="Shop Background"]
+[node name="scroll" type="Area2D" parent="Shop Background" unique_id=980954800]
 position = Vector2(76.0398, -90.7669)
 script = ExtResource("13_qkpxi")
+limit = -585.0
 
-[node name="scrollbar" type="Sprite2D" parent="Shop Background/scroll"]
+[node name="scrollbar" type="Sprite2D" parent="Shop Background/scroll" unique_id=1848731791]
 z_index = 1
 scale = Vector2(0.059, 0.041)
 texture = ExtResource("13_fv21b")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shop Background/scroll"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shop Background/scroll" unique_id=2030048386]
 position = Vector2(0, -0.213062)
 shape = SubResource("RectangleShape2D_5q0nq")
 
-[node name="ScrollbarBar" type="Sprite2D" parent="Shop Background"]
+[node name="ScrollbarBar" type="Sprite2D" parent="Shop Background" unique_id=1632392899]
 position = Vector2(76.0397, 17.8977)
 scale = Vector2(0.059, 0.041)
 texture = ExtResource("14_tel4y")
 
-[node name="Black Background" type="Sprite2D" parent="."]
+[node name="Black Background" type="Sprite2D" parent="." unique_id=745062252]
 position = Vector2(-330, 328)
 scale = Vector2(-1.683, 2.347)
 texture = ExtResource("9_gqmmt")
 
-[node name="close_" type="Area2D" parent="Black Background"]
+[node name="close_" type="Area2D" parent="Black Background" unique_id=1713722217]
 position = Vector2(-115.248, -119.318)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("10_yc10j")
 black = true
 
-[node name="Close" type="Sprite2D" parent="Black Background/close_"]
+[node name="Close" type="Sprite2D" parent="Black Background/close_" unique_id=750527274]
 z_index = 2
 texture_filter = 1
 position = Vector2(3.05176e-05, -1.52588e-05)
 scale = Vector2(0.118812, 0.0852272)
 texture = ExtResource("11_jscy8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Black Background/close_"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Black Background/close_" unique_id=123759440]
 shape = SubResource("RectangleShape2D_f6ptj")
 
-[node name="stonkss" type="Line2D" parent="Black Background"]
+[node name="stonkss" type="Line2D" parent="Black Background" unique_id=1488630062]
 position = Vector2(180.63, -25.1385)
 scale = Vector2(-0.594, 0.426)
 script = ExtResource("15_jkv2x")
 
-[node name="buy_" type="Area2D" parent="Black Background"]
+[node name="buy_" type="Area2D" parent="Black Background" unique_id=1412319172]
 position = Vector2(-77.243, 82.2326)
 script = ExtResource("14_0ld40")
 
-[node name="Buy" type="Sprite2D" parent="Black Background/buy_"]
+[node name="Buy" type="Sprite2D" parent="Black Background/buy_" unique_id=1214556551]
 texture_filter = 1
 rotation = -3.14159
 scale = Vector2(0.15, -0.108)
 texture = ExtResource("15_dp3eg")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Black Background/buy_"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Black Background/buy_" unique_id=2045085901]
 position = Vector2(-0.297089, 0.213043)
 shape = SubResource("RectangleShape2D_muem4")
 
-[node name="sell_" type="Area2D" parent="Black Background"]
+[node name="sell_" type="Area2D" parent="Black Background" unique_id=2090368937]
 position = Vector2(17.2311, 81.8066)
 script = ExtResource("16_gqmmt")
 
-[node name="Sell" type="Sprite2D" parent="Black Background/sell_"]
+[node name="Sell" type="Sprite2D" parent="Black Background/sell_" unique_id=2095687708]
 texture_filter = 1
 rotation = -3.14159
 scale = Vector2(0.15, -0.108)
 texture = ExtResource("14_muem4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Black Background/sell_"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Black Background/sell_" unique_id=1103852172]
 position = Vector2(0, 0.213028)
 shape = SubResource("RectangleShape2D_dp3eg")
 
-[node name="cookie stocks" type="Label" parent="Black Background"]
+[node name="cookie stocks" type="Label" parent="Black Background" unique_id=890422860]
 texture_filter = 1
 offset_left = 50.5051
 offset_top = 107.371
@@ -462,11 +469,11 @@ text = "Cookie Stocks"
 label_settings = SubResource("LabelSettings_muem4")
 metadata/_edit_use_anchors_ = true
 
-[node name="ZeroLine" type="Line2D" parent="Black Background"]
+[node name="ZeroLine" type="Line2D" parent="Black Background" unique_id=430708784]
 points = PackedVector2Array(155, -25, -143, -25)
 width = 1.0
 
-[node name="stock count" type="Label" parent="Black Background"]
+[node name="stock count" type="Label" parent="Black Background" unique_id=435104817]
 texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -484,7 +491,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="stock value" type="Label" parent="Black Background"]
+[node name="stock value" type="Label" parent="Black Background" unique_id=1009036786]
 texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -502,7 +509,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="P_L_Percent" type="Label" parent="Black Background"]
+[node name="P_L_Percent" type="Label" parent="Black Background" unique_id=1224689392]
 texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -520,7 +527,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="P_L_#" type="Label" parent="Black Background"]
+[node name="P_L_#" type="Label" parent="Black Background" unique_id=2049454230]
 texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -537,10 +544,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Cookie Counter Parent" type="Node2D" parent="."]
+[node name="Cookie Counter Parent" type="Node2D" parent="." unique_id=928143060]
 position = Vector2(592, 100)
 
-[node name="Cookie Counter" type="Label" parent="Cookie Counter Parent"]
+[node name="Cookie Counter" type="Label" parent="Cookie Counter Parent" unique_id=570152042]
 texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -562,32 +569,32 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Black Market" type="Area2D" parent="."]
+[node name="Black Market" type="Area2D" parent="." unique_id=2127691473]
 texture_filter = 1
 position = Vector2(-140, 555)
 script = ExtResource("14_jkv2x")
 
-[node name="BlackMarket" type="Sprite2D" parent="Black Market"]
+[node name="BlackMarket" type="Sprite2D" parent="Black Market" unique_id=2007756770]
 texture = ExtResource("14_a8y0u")
 
-[node name="BlackCollider" type="CollisionShape2D" parent="Black Market"]
+[node name="BlackCollider" type="CollisionShape2D" parent="Black Market" unique_id=1815439751]
 position = Vector2(-8.5, 0.5)
 shape = SubResource("RectangleShape2D_a8y0u")
 
-[node name="Factory Handle" type="Area2D" parent="."]
+[node name="Factory Handle" type="Area2D" parent="." unique_id=1370255036]
 z_index = -2
 position = Vector2(150, 193)
 script = ExtResource("20_yc10j")
 
-[node name="Factories" type="Sprite2D" parent="Factory Handle"]
+[node name="Factories" type="Sprite2D" parent="Factory Handle" unique_id=1159232638]
 z_index = -2
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("20_gqmmt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Factory Handle"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Factory Handle" unique_id=1974068905]
 shape = SubResource("RectangleShape2D_jscy8")
 
-[node name="FactoryIcon" type="Sprite2D" parent="."]
+[node name="FactoryIcon" type="Sprite2D" parent="." unique_id=1253191507]
 visible = false
 modulate = Color(1, 1, 1, 0.762)
 z_index = -3
@@ -597,7 +604,7 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("22_jscy8")
 script = ExtResource("26_5he1u")
 
-[node name="FactoryPrompt" type="Sprite2D" parent="."]
+[node name="FactoryPrompt" type="Sprite2D" parent="." unique_id=989892962]
 z_index = 6
 texture_filter = 1
 position = Vector2(576, -200)
@@ -605,7 +612,7 @@ scale = Vector2(2.01, 2.01)
 texture = ExtResource("23_pm3ni")
 script = ExtResource("24_y6deb")
 
-[node name="Factory" type="Label" parent="FactoryPrompt"]
+[node name="Factory" type="Label" parent="FactoryPrompt" unique_id=604636730]
 texture_filter = 1
 offset_left = -37.3134
 offset_top = -68.6567
@@ -615,24 +622,24 @@ scale = Vector2(1.559, 1.35)
 text = "Factory"
 metadata/_edit_use_anchors_ = true
 
-[node name="close_2" type="Area2D" parent="FactoryPrompt"]
+[node name="close_2" type="Area2D" parent="FactoryPrompt" unique_id=1058222684]
 position = Vector2(114.925, -62.6866)
 rotation = -3.14159
 scale = Vector2(0.86, -1.199)
 script = ExtResource("10_yc10j")
 factory = true
 
-[node name="Close" type="Sprite2D" parent="FactoryPrompt/close_2"]
+[node name="Close" type="Sprite2D" parent="FactoryPrompt/close_2" unique_id=1891849109]
 z_index = 2
 texture_filter = 1
 position = Vector2(3.05176e-05, -1.52588e-05)
 scale = Vector2(0.118812, 0.0852272)
 texture = ExtResource("11_jscy8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FactoryPrompt/close_2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FactoryPrompt/close_2" unique_id=1207990701]
 shape = SubResource("RectangleShape2D_f6ptj")
 
-[node name="workers" type="Label" parent="FactoryPrompt"]
+[node name="workers" type="Label" parent="FactoryPrompt" unique_id=476244278]
 texture_filter = 1
 offset_left = -33.8308
 offset_top = -47.7612
@@ -642,7 +649,7 @@ scale = Vector2(1.014, 0.878)
 text = "Workers: 5"
 metadata/_edit_use_anchors_ = true
 
-[node name="wage_counter" type="Label" parent="FactoryPrompt"]
+[node name="wage_counter" type="Label" parent="FactoryPrompt" unique_id=918854874]
 texture_filter = 1
 offset_left = -123.881
 offset_top = -18.408
@@ -652,34 +659,34 @@ scale = Vector2(1.454, 1.259)
 text = "Wage: 3 cookies"
 metadata/_edit_use_anchors_ = true
 
-[node name="wage+" type="Area2D" parent="FactoryPrompt"]
+[node name="wage+" type="Area2D" parent="FactoryPrompt" unique_id=1311956390]
 position = Vector2(80.597, -7.9602)
 script = ExtResource("25_vxglm")
 
-[node name="Wage+" type="Sprite2D" parent="FactoryPrompt/wage+"]
+[node name="Wage+" type="Sprite2D" parent="FactoryPrompt/wage+" unique_id=933677033]
 texture_filter = 1
 scale = Vector2(0.107, 0.107)
 texture = ExtResource("25_2wyq8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FactoryPrompt/wage+"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FactoryPrompt/wage+" unique_id=125791593]
 visible = false
 position = Vector2(0.248932, 0)
 shape = SubResource("RectangleShape2D_2wyq8")
 
-[node name="wage-" type="Area2D" parent="FactoryPrompt"]
+[node name="wage-" type="Area2D" parent="FactoryPrompt" unique_id=366619147]
 position = Vector2(116.417, -7.9602)
 script = ExtResource("25_vxglm")
 m_p = "M"
 
-[node name="Wage-" type="Sprite2D" parent="FactoryPrompt/wage-"]
+[node name="Wage-" type="Sprite2D" parent="FactoryPrompt/wage-" unique_id=371567863]
 scale = Vector2(0.107, 0.107)
 texture = ExtResource("26_vxglm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FactoryPrompt/wage-"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FactoryPrompt/wage-" unique_id=406863975]
 position = Vector2(-3.05176e-05, 7.62939e-06)
 shape = SubResource("RectangleShape2D_vxglm")
 
-[node name="happy" type="Label" parent="FactoryPrompt"]
+[node name="happy" type="Label" parent="FactoryPrompt" unique_id=288162337]
 offset_left = -123.881
 offset_top = 29.8507
 offset_right = -11.8806
@@ -688,7 +695,7 @@ scale = Vector2(1.454, 1.259)
 text = "Happiness: 100%"
 metadata/_edit_use_anchors_ = true
 
-[node name="income" type="Label" parent="FactoryPrompt"]
+[node name="income" type="Label" parent="FactoryPrompt" unique_id=2069564326]
 offset_left = -123.881
 offset_top = 52.7363
 offset_right = 8.1194
@@ -697,7 +704,7 @@ scale = Vector2(1.454, 1.259)
 text = "Income: 30 cookies"
 metadata/_edit_use_anchors_ = true
 
-[node name="expectation" type="Label" parent="FactoryPrompt"]
+[node name="expectation" type="Label" parent="FactoryPrompt" unique_id=816285693]
 offset_left = -123.881
 offset_top = 6.46766
 offset_right = 32.1194
@@ -706,96 +713,96 @@ scale = Vector2(1.454, 1.259)
 text = "Expectation: 3 cookies"
 metadata/_edit_use_anchors_ = true
 
-[node name="upgrade" type="Area2D" parent="FactoryPrompt"]
+[node name="upgrade" type="Area2D" parent="FactoryPrompt" unique_id=301879643]
 position = Vector2(-104.478, -51.7413)
 script = ExtResource("28_yq6so")
 
-[node name="FactoryUpgrade" type="Sprite2D" parent="FactoryPrompt/upgrade"]
+[node name="FactoryUpgrade" type="Sprite2D" parent="FactoryPrompt/upgrade" unique_id=439077348]
 texture_filter = 1
 scale = Vector2(0.112, 0.112)
 texture = ExtResource("28_2f3dj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FactoryPrompt/upgrade"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FactoryPrompt/upgrade" unique_id=1200837350]
 shape = SubResource("RectangleShape2D_fv21b")
 
-[node name="ColorPrompt" type="Sprite2D" parent="."]
+[node name="ColorPrompt" type="Sprite2D" parent="." unique_id=1467540027]
 z_index = 5
 position = Vector2(592, 883)
 scale = Vector2(2.09, 2.09)
 texture = ExtResource("23_pm3ni")
 script = ExtResource("33_fuf3a")
 
-[node name="RgbSlidee" type="Sprite2D" parent="ColorPrompt"]
+[node name="RgbSlidee" type="Sprite2D" parent="ColorPrompt" unique_id=1534439118]
 position = Vector2(-44.0192, -10.5263)
 scale = Vector2(0.220096, 0.220096)
 texture = ExtResource("33_j8jky")
 
-[node name="Area2D" type="Area2D" parent="ColorPrompt/RgbSlidee"]
+[node name="Area2D" type="Area2D" parent="ColorPrompt/RgbSlidee" unique_id=632985787]
 modulate = Color(1, 0.3, 0.451667, 1)
 position = Vector2(-317.391, 0)
 
-[node name="RgbSlider" type="Sprite2D" parent="ColorPrompt/RgbSlidee/Area2D"]
+[node name="RgbSlider" type="Sprite2D" parent="ColorPrompt/RgbSlidee/Area2D" unique_id=660844410]
 scale = Vector2(0.54, 0.54)
 texture = ExtResource("34_kmb1v")
 script = ExtResource("35_fuf3a")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorPrompt/RgbSlidee/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorPrompt/RgbSlidee/Area2D" unique_id=130640764]
 shape = SubResource("CircleShape2D_pibwh")
 
-[node name="RgbSlidee2" type="Sprite2D" parent="ColorPrompt"]
+[node name="RgbSlidee2" type="Sprite2D" parent="ColorPrompt" unique_id=495701148]
 position = Vector2(-44.0192, 16.2679)
 scale = Vector2(0.220096, 0.220096)
 texture = ExtResource("33_j8jky")
 
-[node name="Area2D" type="Area2D" parent="ColorPrompt/RgbSlidee2"]
+[node name="Area2D" type="Area2D" parent="ColorPrompt/RgbSlidee2" unique_id=1322002446]
 modulate = Color(0.5, 1, 0.716667, 1)
 position = Vector2(-317.391, 0.00026537)
 
-[node name="RgbSlider" type="Sprite2D" parent="ColorPrompt/RgbSlidee2/Area2D"]
+[node name="RgbSlider" type="Sprite2D" parent="ColorPrompt/RgbSlidee2/Area2D" unique_id=1882954238]
 scale = Vector2(0.54, 0.54)
 texture = ExtResource("34_kmb1v")
 script = ExtResource("35_fuf3a")
 rgb = "G"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorPrompt/RgbSlidee2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorPrompt/RgbSlidee2/Area2D" unique_id=1874948140]
 shape = SubResource("CircleShape2D_pibwh")
 
-[node name="RgbSlidee3" type="Sprite2D" parent="ColorPrompt"]
+[node name="RgbSlidee3" type="Sprite2D" parent="ColorPrompt" unique_id=1551935404]
 position = Vector2(-44.0192, 44.0191)
 scale = Vector2(0.220096, 0.220096)
 texture = ExtResource("33_j8jky")
 
-[node name="Area2D" type="Area2D" parent="ColorPrompt/RgbSlidee3"]
+[node name="Area2D" type="Area2D" parent="ColorPrompt/RgbSlidee3" unique_id=1967544666]
 modulate = Color(0.311102, 0.70743, 1, 1)
 position = Vector2(-317.391, 0)
 
-[node name="RgbSlider" type="Sprite2D" parent="ColorPrompt/RgbSlidee3/Area2D"]
+[node name="RgbSlider" type="Sprite2D" parent="ColorPrompt/RgbSlidee3/Area2D" unique_id=685336568]
 scale = Vector2(0.54, 0.54)
 texture = ExtResource("34_kmb1v")
 script = ExtResource("35_fuf3a")
 rgb = "B"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorPrompt/RgbSlidee3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorPrompt/RgbSlidee3/Area2D" unique_id=1344975900]
 shape = SubResource("CircleShape2D_pibwh")
 
-[node name="tick" type="Area2D" parent="ColorPrompt"]
+[node name="tick" type="Area2D" parent="ColorPrompt" unique_id=827853742]
 position = Vector2(85.1675, 16.2679)
 script = ExtResource("37_c6pm6")
 
-[node name="RgbSlider2" type="Sprite2D" parent="ColorPrompt/tick"]
+[node name="RgbSlider2" type="Sprite2D" parent="ColorPrompt/tick" unique_id=1015205704]
 scale = Vector2(0.492823, 0.492823)
 texture = ExtResource("34_kmb1v")
 script = ExtResource("36_kmb1v")
 
-[node name="Tick" type="Sprite2D" parent="ColorPrompt/tick/RgbSlider2"]
+[node name="Tick" type="Sprite2D" parent="ColorPrompt/tick/RgbSlider2" unique_id=1934316344]
 position = Vector2(-4.85437, 0.00012207)
 scale = Vector2(0.679612, 0.679612)
 texture = ExtResource("38_pibwh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorPrompt/tick"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorPrompt/tick" unique_id=694321572]
 shape = SubResource("CircleShape2D_5he1u")
 
-[node name="Label" type="Label" parent="ColorPrompt"]
+[node name="Label" type="Label" parent="ColorPrompt" unique_id=168621741]
 texture_filter = 1
 offset_left = -108.134
 offset_top = -62.6794
@@ -804,35 +811,35 @@ offset_bottom = -39.6794
 text = "Factory Customization"
 label_settings = SubResource("LabelSettings_kmb1v")
 
-[node name="AchievementSound" type="AudioStreamPlayer2D" parent="."]
+[node name="AchievementSound" type="AudioStreamPlayer2D" parent="." unique_id=722730684]
 stream = ExtResource("49_ty1g6")
 volume_db = 1.025
 
-[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=321494487]
 stream = ExtResource("48_ty1g6")
 volume_db = 11.462
 autoplay = true
 script = ExtResource("49_j2jfr")
 
-[node name="ClickEffect" type="AudioStreamPlayer2D" parent="."]
+[node name="ClickEffect" type="AudioStreamPlayer2D" parent="." unique_id=319267067]
 stream = ExtResource("50_j2jfr")
 volume_db = -33.302
 
-[node name="GoldEffect" type="AudioStreamPlayer2D" parent="."]
+[node name="GoldEffect" type="AudioStreamPlayer2D" parent="." unique_id=31214757]
 stream = ExtResource("51_bjg73")
 
-[node name="PurchaseEffect" type="AudioStreamPlayer2D" parent="."]
+[node name="PurchaseEffect" type="AudioStreamPlayer2D" parent="." unique_id=836313959]
 stream = ExtResource("52_bu4jf")
 
-[node name="HissEffect" type="AudioStreamPlayer2D" parent="."]
+[node name="HissEffect" type="AudioStreamPlayer2D" parent="." unique_id=932615882]
 stream = ExtResource("54_ids8r")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=118407896]
 unique_name_in_owner = true
 offset = Vector2(576, 324)
 script = ExtResource("54_0loja")
 
-[node name="Temp" type="VSlider" parent="."]
+[node name="Temp" type="VSlider" parent="." unique_id=120333400]
 self_modulate = Color(0, 0.721892, 0.84539, 1)
 texture_filter = 1
 offset_left = 1107.0
@@ -841,7 +848,7 @@ offset_right = 1123.0
 offset_bottom = 482.0
 script = ExtResource("56_dnhof")
 
-[node name="Label" type="Label" parent="Temp"]
+[node name="Label" type="Label" parent="Temp" unique_id=952383224]
 texture_filter = 1
 layout_mode = 0
 offset_left = -10.0
@@ -850,7 +857,7 @@ offset_right = 27.0
 offset_bottom = -2.0
 text = "TEMP"
 
-[node name="Sprite2D" type="Sprite2D" parent="Temp"]
+[node name="Sprite2D" type="Sprite2D" parent="Temp" unique_id=1114972730]
 modulate = Color(1, 0, 0.25, 1)
 texture_filter = 1
 position = Vector2(7.99997, 63)
@@ -858,34 +865,35 @@ scale = Vector2(0.120833, 0.041)
 texture = ExtResource("57_1v6qk")
 script = ExtResource("58_augu2")
 
-[node name="ALT" type="Sprite2D" parent="."]
+[node name="ALT" type="Sprite2D" parent="." unique_id=749706912]
 texture_filter = 1
 position = Vector2(1417, 570)
 scale = Vector2(0.35, 0.35)
 offset = Vector2(750, 750)
 script = ExtResource("60_t5ykj")
 
-[node name="Settings" type="Area2D" parent="."]
+[node name="Settings" type="Area2D" parent="." unique_id=1716582892]
 position = Vector2(75, 65)
 script = ExtResource("60_e755i")
 
-[node name="Settings" type="Sprite2D" parent="Settings"]
+[node name="Settings" type="Sprite2D" parent="Settings" unique_id=327357876]
 texture_filter = 1
 position = Vector2(0.25, -3.25)
 scale = Vector2(0.59, 0.59)
 texture = ExtResource("60_kf5aa")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Settings"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Settings" unique_id=1160766314]
 shape = SubResource("CircleShape2D_ro3en")
 
-[node name="SettingsPrompt" type="Sprite2D" parent="."]
+[node name="SettingsPrompt" type="Sprite2D" parent="." unique_id=1616800617]
+z_index = 6
 texture_filter = 1
 position = Vector2(670, 1521)
 scale = Vector2(1.65, 1.5)
 texture = ExtResource("23_pm3ni")
 script = ExtResource("62_e755i")
 
-[node name="Label" type="Label" parent="SettingsPrompt"]
+[node name="Label" type="Label" parent="SettingsPrompt" unique_id=1154903384]
 offset_left = -45.4545
 offset_top = -67.4467
 offset_right = 12.5455
@@ -893,7 +901,7 @@ offset_bottom = -51.4467
 scale = Vector2(1.375, 1.375)
 text = "Settings"
 
-[node name="Music" type="HSlider" parent="SettingsPrompt"]
+[node name="Music" type="HSlider" parent="SettingsPrompt" unique_id=128812497]
 offset_left = -123.03
 offset_top = -32.1133
 offset_right = 56.9697
@@ -903,7 +911,7 @@ max_value = 1.0
 step = 0.01
 value = 1.0
 
-[node name="Effects" type="HSlider" parent="SettingsPrompt"]
+[node name="Effects" type="HSlider" parent="SettingsPrompt" unique_id=730439390]
 offset_left = -123.03
 offset_top = -7.44668
 offset_right = 56.9697
@@ -913,7 +921,7 @@ max_value = 1.0
 step = 0.01
 value = 1.0
 
-[node name="Label2" type="Label" parent="SettingsPrompt"]
+[node name="Label2" type="Label" parent="SettingsPrompt" unique_id=815952268]
 offset_left = 78.7879
 offset_top = -30.78
 offset_right = 124.788
@@ -923,21 +931,21 @@ text = "Music
 Effects"
 label_settings = SubResource("LabelSettings_t5ykj")
 
-[node name="close_" type="Area2D" parent="SettingsPrompt"]
+[node name="close_" type="Area2D" parent="SettingsPrompt" unique_id=637587847]
 z_index = 3
 position = Vector2(-115.152, -56.78)
 scale = Vector2(0.64, 0.98)
 script = ExtResource("10_yc10j")
 settings = true
 
-[node name="Close" type="Sprite2D" parent="SettingsPrompt/close_"]
+[node name="Close" type="Sprite2D" parent="SettingsPrompt/close_" unique_id=740610981]
 z_index = 2
 texture_filter = 1
 position = Vector2(3.05176e-05, -1.52588e-05)
 scale = Vector2(0.118812, 0.0852272)
 texture = ExtResource("11_jscy8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsPrompt/close_"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsPrompt/close_" unique_id=1206586272]
 shape = SubResource("RectangleShape2D_f6ptj")
 
 [connection signal="mouse_entered" from="Cookie" to="Cookie" method="_on_mouse_entered"]

@@ -48,9 +48,11 @@ var rightear = 0
 var settings = false
 var effect_vol = 1
 var effects: Array[AudioStreamPlayer2D]
+var availables = 0
 
 func achievement() -> void:
-	$"../AchievementSound".play()
+	if !effect_vol == -0.3:
+		$"../AchievementSound".play()
 
 func lav() -> void:
 	minus = startime
@@ -128,8 +130,7 @@ func toggle_shop() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and mouse:
 		if event.button_index in [MOUSE_BUTTON_WHEEL_DOWN]:
-			var limit = -505
-			if unlocked: limit = -800
+			var limit = -585
 			if shop_scroll > limit:
 				shop_scroll -= 10
 			else:

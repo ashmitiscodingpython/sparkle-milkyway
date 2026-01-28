@@ -10,6 +10,7 @@ var norm_scale
 @onready var game_manager = %GameManager
 var namea
 var last
+var was_avail
 
 func michelin():
 	game_manager.masterchefs += 1
@@ -31,7 +32,7 @@ var effects = {
 	8: func(): game_manager.CPS += 100,
 	9: func(): michelin(),
 	10: func(): if true:
-		game_manager.CPS += 10_000_000
+		game_manager.CPS += 100_000
 		game_manager.cookiemonster = true,
 	11: func(): if !game_manager.lava: 
 		game_manager.lava = true
@@ -61,7 +62,13 @@ func _process(_delta: float) -> void:
 				!(game_manager.lava and varient == 11) and !(game_manager.cookiemonster and varient == 10)
 	if game_manager.cookies >= cost and exc and !game_manager.factory_color_prompt:
 		area.modulate = Color(1.5, 1.5, 1.5, 1)
+		if not was_avail:
+			game_manager.availables += 1
+			was_avail = true
 	else:
+		if was_avail:
+			was_avail = false
+			game_manager.availables -= 1
 		area.modulate = Color(0.5, 0.5, 0.5, 1)
 	if mouse and !game_manager.close_highlighted and game_manager.cookies >= cost and exc and !game_manager.factory_color_prompt:
 		var scaled = ((norm_scale * 1.15) - area.scale.x) / 5
@@ -80,7 +87,8 @@ func _input(event: InputEvent) -> void:
 						!(game_manager.factories == 0 and varient == 7) and !(game_manager.masterchefs > 17 and varient == 9) and \
 						!(game_manager.lava and varient == 11) and !(game_manager.cookiemonster and varient == 10)
 			if exc and !game_manager.factory_color_prompt:
-				$"../../PurchaseEffect".play()
+				if !game_manager.effect_vol == -0.3:
+					$"../../PurchaseEffect".play()
 				area.scale -= Vector2(0.1, 0.1)
 				game_manager.cookies -= cost
 				effects[varient].call()
