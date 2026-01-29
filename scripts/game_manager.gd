@@ -4,7 +4,7 @@ extends Node2D
 @onready var cs = $"../CPS Counter"
 @onready var mc = $"../Cookie Counter Parent"
 @onready var factory = $"../FactoryIcon"
-var cookies = 0
+@export var cookies = 0
 var black_market = false
 @export var shop_scroll = 0
 var CPC = 1
@@ -89,13 +89,13 @@ func _process(_delta: float) -> void:
 	if !lava:
 		minus = startime
 	lavatime = startime - minus
-	if lavatime > 10:
+	if lavatime > 600:
 		lava = false
 	cookie_value += randf_range(-0.002, 0.0021)
 	cc.position.x = 50 + ccx
 	cs.position.x = csx
 	mc.position.x = 592 + mcx_a + mcx_b
-	if randf_range(0.0000, 100.0000) < 0.01 and !golde:
+	if randf_range(0.0000, 100.0000) < 0.01 and !golde and introed and cookies > 0:
 		var gold = load("res://scenes/gold_3x.tscn").instantiate()
 		get_tree().current_scene.add_child(gold)
 

@@ -63,7 +63,7 @@
 [ext_resource type="Script" uid="uid://y8d684cajolv" path="res://scripts/alt.gd" id="60_t5ykj"]
 [ext_resource type="Script" uid="uid://owoi2dvojj8a" path="res://scripts/settings_prompt.gd" id="62_e755i"]
 [ext_resource type="Texture2D" uid="uid://c1yc1cyb68wa1" path="res://images/logo.png" id="63_ro3en"]
-[ext_resource type="Script" uid="uid://ctnauup5rqjtu" path="res://scenes/logo.gd" id="64_od4ux"]
+[ext_resource type="Script" uid="uid://ctnauup5rqjtu" path="res://scripts/logo.gd" id="64_od4ux"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0loja"]
 shader = ExtResource("53_o7ddy")

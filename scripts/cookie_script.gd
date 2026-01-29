@@ -23,6 +23,11 @@ var heat_disable = false
 
 func _ready() -> void:
 	area.scale = Vector2(1, 1)
+	var img = load("res://images/cursor2.png").get_image()
+	var scalen = 64 - (10 if mouse_click else 0)
+	img.resize(scalen, scalen)
+	var tex = ImageTexture.create_from_image(img)
+	Input.set_custom_mouse_cursor(tex)
 
 func _process(delta: float) -> void:
 	if game_manager.golde:
@@ -38,11 +43,6 @@ func _process(delta: float) -> void:
 		back.texture = load("res://images/Yellow.png")
 		back.stretch_mode = 1
 	$".".position.x = 592 + cx_a + cx_b
-	var img = load("res://images/cursor2.png").get_image()
-	var scalen = 64 - (10 if mouse_click else 0)
-	img.resize(scalen, scalen)
-	var tex = ImageTexture.create_from_image(img)
-	Input.set_custom_mouse_cursor(tex)
 	time_sec += delta
 	area.rotation = sin(time_sec * 3) * 0.3
 	if mouse_on and !game_manager.factory_color_prompt and !heat_disable:
