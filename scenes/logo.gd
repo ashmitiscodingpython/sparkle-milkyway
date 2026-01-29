@@ -12,6 +12,9 @@ func _process(_delta: float) -> void:
 		scale += (Vector2(1.7, 1.7) - scale) / 5
 	if game.introed:
 		scale += (Vector2(0, 0) - scale) / 10
+		left.position.x += (-700 - left.position.x) / 5
+		right.position.x += (1400 - right.position.x) / 5
+		$"../CPUParticles2D".emitting = false
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and mouse:

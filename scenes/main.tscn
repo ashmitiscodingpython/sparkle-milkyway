@@ -823,6 +823,7 @@ volume_db = 1.025
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=321494487]
 stream = ExtResource("48_ty1g6")
 volume_db = 11.462
+autoplay = true
 script = ExtResource("49_j2jfr")
 
 [node name="ClickEffect" type="AudioStreamPlayer2D" parent="." unique_id=319267067]
@@ -977,7 +978,7 @@ texture = ExtResource("3_a8y0u")
 stretch_mode = 1
 
 [node name="Logo" type="Sprite2D" parent="." unique_id=524365129]
-z_index = 11
+z_index = 12
 texture_filter = 1
 position = Vector2(576, 324)
 scale = Vector2(0.61, 0.61)
@@ -990,6 +991,17 @@ script = ExtResource("64_od4ux")
 position = Vector2(0.5882263, 2.9411774)
 scale = Vector2(1.0000002, 1.0000002)
 shape = SubResource("RectangleShape2D_xhfw6")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=237380782]
+z_index = 11
+texture_filter = 1
+position = Vector2(576, -69.1)
+amount = 48
+texture = ExtResource("2_trceg")
+lifetime = 1.32
+randomness = 0.44
+emission_shape = 3
+emission_rect_extents = Vector2(576, 1)
 
 [connection signal="mouse_entered" from="Cookie" to="Cookie" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Cookie" to="Cookie" method="_on_mouse_exited"]
