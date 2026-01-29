@@ -33,3 +33,8 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 [gui]
 
 theme/custom_font="uid://b423uj8o0db2"
+
+[rendering]
+
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true

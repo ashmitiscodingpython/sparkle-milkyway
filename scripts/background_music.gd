@@ -4,9 +4,11 @@ extends AudioStreamPlayer2D
 var time = 0
 
 func _process(_delta: float) -> void:
+	if %GameManager.introed and not playing:
+		play()
 	time += _delta
 	volume_db = (-5 + clamp(25 * time, 0, 25)) * remap(volume.value, 0, 1, -0.3, 1)
 	if volume.value == 0:
-		playing = false
-	elif not playing:
-		playing = true
+		stream_paused = true
+	elif stream_paused:
+		stream_paused = false

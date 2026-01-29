@@ -49,6 +49,7 @@ var settings = false
 var effect_vol = 1
 var effects: Array[AudioStreamPlayer2D]
 var availables = 0
+var introed = false
 
 func achievement() -> void:
 	if !effect_vol == -0.3:

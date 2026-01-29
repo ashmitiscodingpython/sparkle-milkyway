@@ -62,6 +62,8 @@
 [ext_resource type="Texture2D" uid="uid://b7vwkyoadp6i5" path="res://images/settings.png" id="60_kf5aa"]
 [ext_resource type="Script" uid="uid://y8d684cajolv" path="res://scripts/alt.gd" id="60_t5ykj"]
 [ext_resource type="Script" uid="uid://owoi2dvojj8a" path="res://scripts/settings_prompt.gd" id="62_e755i"]
+[ext_resource type="Texture2D" uid="uid://c1yc1cyb68wa1" path="res://images/logo.png" id="63_ro3en"]
+[ext_resource type="Script" uid="uid://ctnauup5rqjtu" path="res://scenes/logo.gd" id="64_od4ux"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0loja"]
 shader = ExtResource("53_o7ddy")
@@ -144,6 +146,9 @@ radius = 33.1361
 
 [sub_resource type="LabelSettings" id="LabelSettings_t5ykj"]
 line_spacing = -4.665
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhfw6"]
+size = Vector2(114.117615, 119.99997)
 
 [node name="Node2D" type="Node2D" unique_id=784044576]
 
@@ -818,7 +823,6 @@ volume_db = 1.025
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=321494487]
 stream = ExtResource("48_ty1g6")
 volume_db = 11.462
-autoplay = true
 script = ExtResource("49_j2jfr")
 
 [node name="ClickEffect" type="AudioStreamPlayer2D" parent="." unique_id=319267067]
@@ -948,6 +952,45 @@ texture = ExtResource("11_jscy8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsPrompt/close_" unique_id=1206586272]
 shape = SubResource("RectangleShape2D_f6ptj")
 
+[node name="IntroLeft" type="TextureRect" parent="." unique_id=1769289093]
+z_index = 10
+texture_filter = 1
+offset_left = -54.0
+offset_top = -84.0
+offset_right = 608.0
+offset_bottom = 752.0
+texture = ExtResource("3_a8y0u")
+stretch_mode = 1
+
+[node name="IntroRight" type="TextureRect" parent="." unique_id=550594110]
+z_index = 9
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 608.0
+offset_top = -84.0
+offset_right = 1200.0
+offset_bottom = 827.0
+grow_horizontal = 0
+texture = ExtResource("3_a8y0u")
+stretch_mode = 1
+
+[node name="Logo" type="Sprite2D" parent="." unique_id=524365129]
+z_index = 11
+texture_filter = 1
+position = Vector2(576, 324)
+scale = Vector2(0.61, 0.61)
+texture = ExtResource("63_ro3en")
+script = ExtResource("64_od4ux")
+
+[node name="Area2D" type="Area2D" parent="Logo" unique_id=625223317]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Logo/Area2D" unique_id=1869590536]
+position = Vector2(0.5882263, 2.9411774)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_xhfw6")
+
 [connection signal="mouse_entered" from="Cookie" to="Cookie" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Cookie" to="Cookie" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Cookie/Area2D" to="Cookie/Area2D/EyeBack/EyeFore" method="_on_area_2d_mouse_entered"]
@@ -992,3 +1035,5 @@ shape = SubResource("RectangleShape2D_f6ptj")
 [connection signal="mouse_exited" from="Settings" to="Settings" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="SettingsPrompt/close_" to="SettingsPrompt/close_" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="SettingsPrompt/close_" to="SettingsPrompt/close_" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Logo/Area2D" to="Logo" method="mouse_entered"]
+[connection signal="mouse_exited" from="Logo/Area2D" to="Logo" method="mouse_exited"]
