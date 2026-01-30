@@ -29,6 +29,9 @@ func _process(_delta: float) -> void:
 			are.position += Vector2((1010 - x) / 5, 0)
 		else:
 			are.position += Vector2((1071 - x) / 5, 0)
+			if game_manager.black and mouse:
+				$"../ALT".touchtime += 1
+				$"../ALT".texture = load("res://images/shop_alt.png")
 	else:
 		cook_x += (-242 - cook_x) / 5
 		shop_back.position += Vector2((1000 - sx) / 5, 0)

@@ -3,7 +3,7 @@ Font - Yuki Pixels (https://www.1001fonts.com/boldpixels-font.html)
 Grandma Pixel Art - Pixilart (https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pixilart.com%2Fdraw%2Fgrandma-94991eabb05a6db&psig=AOvVaw3NH4xJ1vQjbwEdK-Q5xIIn&ust=1763050684159000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCLCG-_WB7ZADFQAAAAAdAAAAABAj)
 Factory Worker - Recreated from (https://www.google.com/imgres?q=factory%20worker%20pixel&imgurl=https%3A%2F%2Fwww.shutterstock.com%2Fimage-vector%2Fcartoon-pixel-8-bit-character-260nw-2687683307.jpg&imgrefurl=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Fpixel-factory%3Fimage_type%3Dvector%26page%3D4&docid=vggHrbHPQPpJkM&tbnid=7vVAbAOcgRgtHM&vet=12ahUKEwjV0Z3-2I2RAxXFh68BHcFQMw0QM3oECBoQAA..i&w=260&h=280&hcb=2&itg=1&ved=2ahUKEwjV0Z3-2I2RAxXFh68BHcFQMw0QM3oECBoQAA)
 Ideas for most of the shop items and a few mechanics but none of the code - My best friend, Trilok
-Ear collision theory - n0o0b090lvl (Slack username)(https://hackclub.enterprise.slack.com/team/U095T5UB8DS)
+Ear collision theory - n0o0b090lv (Slack username)(https://hackclub.enterprise.slack.com/team/U095T5UB8DS)
 Achievement Jingle (Sound5) - freesound_community from Pixabay (https://pixabay.com/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=7000)
 Background Music - Sergei Chetvertnykh from Pixabay (https://pixabay.com/sound-effects/happy-relaxing-loop-275536/)
 Click Sound - Universfield from Pixabay (https://pixabay.com/sound-effects/computer-mouse-click-02-383961/)

@@ -45,6 +45,9 @@ func _process(_delta: float) -> void:
 			mcx += (175 - mcx) / 5
 		else:
 			x += (64 - area.position.x) / 5
+			if game.open and mouse:
+				$"../ALT".touchtime += 1
+				$"../ALT".texture = load("res://images/black_alt.png")
 	else:
 		area.visible = false
 	game.mcx_a = mcx
