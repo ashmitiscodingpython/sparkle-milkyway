@@ -45,7 +45,7 @@ func _process(delta: float) -> void:
 	$".".position.x = 592 + cx_a + cx_b
 	time_sec += delta
 	area.rotation = sin(time_sec * 3) * 0.3
-	if mouse_on and !game_manager.factory_color_prompt and !heat_disable:
+	if mouse_on and !game_manager.factory_color_prompt and !heat_disable and !game_manager.settings:
 		area.scale += (Vector2(6, 6) - area.scale) / 10
 	else:
 		area.scale += (Vector2(5, 5) - area.scale) / 10
@@ -100,7 +100,7 @@ func _process(delta: float) -> void:
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index in [MOUSE_BUTTON_LEFT]:
-		if mouse_on and !game_manager.factory_color_prompt and !heat_disable:
+		if mouse_on and !game_manager.factory_color_prompt and !heat_disable and !game_manager.settings:
 			$"../ClickEffect".play()
 			area.scale += Vector2(1, 1)
 			var sma_cook = load("res://scenes/cookie_smal.tscn")

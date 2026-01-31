@@ -239,7 +239,6 @@ metadata/_edit_use_anchors_ = true
 [node name="GameManager" type="Node2D" parent="." unique_id=1908970732]
 unique_name_in_owner = true
 script = ExtResource("4_jkv2x")
-cookies = 500000000
 
 [node name="CPS Counter" type="Label" parent="." unique_id=731323940]
 texture_filter = 1

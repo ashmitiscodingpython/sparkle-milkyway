@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bj3le6sau81r7"]
+
+[ext_resource type="Texture2D" uid="uid://c71c465mbgynu" path="res://images/back.png" id="1_b0pev"]
+[ext_resource type="Texture2D" uid="uid://drps3la7xx8tq" path="res://images/Yellow.png" id="1_nir0f"]
+[ext_resource type="Texture2D" uid="uid://bypm1vj5jdkvv" path="res://images/cookie.png" id="2_nir0f"]
+[ext_resource type="Texture2D" uid="uid://bc10v8j1mxeey" path="res://images/golden cookie.png" id="3_msb4c"]
+[ext_resource type="Texture2D" uid="uid://bw1tujnwsshfs" path="res://images/cursor.png" id="4_kqkt7"]
+
+[node name="BackgroundCapture" type="Node2D" unique_id=1605730714]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1529057872]
+offset_left = -105.0
+offset_top = -99.0
+offset_right = 1200.0
+offset_bottom = 753.0
+texture = ExtResource("1_nir0f")
+stretch_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1372527197]
+visible = false
+position = Vector2(597, 312)
+texture = ExtResource("1_b0pev")
+
+[node name="cookies" type="CPUParticles2D" parent="." unique_id=779594687]
+position = Vector2(576, -50)
+emitting = false
+amount = 48
+texture = ExtResource("2_nir0f")
+lifetime = 1.35
+emission_shape = 3
+emission_rect_extents = Vector2(576, 1)
+
+[node name="golden cookies" type="CPUParticles2D" parent="." unique_id=1712950030]
+position = Vector2(576, -50)
+emitting = false
+amount = 48
+texture = ExtResource("3_msb4c")
+lifetime = 1.35
+emission_shape = 3
+emission_rect_extents = Vector2(576, 1)
+
+[node name="mice" type="CPUParticles2D" parent="." unique_id=565767805]
+position = Vector2(576, -50)
+emitting = false
+amount = 48
+texture = ExtResource("4_kqkt7")
+lifetime = 1.35
+emission_shape = 3
+emission_rect_extents = Vector2(576, 1)
+angle_min = -45.0
+angle_max = 45.0
+scale_amount_min = 0.5
+scale_amount_max = 0.5
